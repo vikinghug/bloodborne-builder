@@ -20,5 +20,12 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
-
+  connections: {
+    postgres: {
+      host: 'localhost',
+      user: 'bloodborne-builder',
+      password: 'bloodborne-builder',
+      database: 'bloodborne-builder-dev'
+    }
+  }
 };
