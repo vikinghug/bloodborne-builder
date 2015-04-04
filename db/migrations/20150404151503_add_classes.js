@@ -1,7 +1,7 @@
 'use strict';
 
 exports.up = function(knex, Promise) {
-  knex.schema.createTable('classes', function(table) {
+  knex.schema.createTable('class', function(table) {
     table.increments('id');
 
     table.string('name');
@@ -20,7 +20,7 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  knex.schema.createTable('classes', function(table) {
-    knex.schema.dropTable('classes');
+  knex.schema.createTable('class', function(table) {
+    knex.schema.dropTable('class');
   });
 };
