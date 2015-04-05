@@ -1,5 +1,5 @@
 /**
-* Dungeon.js
+* Item.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -8,23 +8,14 @@
 module.exports = {
   attributes: {
     name: {
-      type: "string",
+      type: 'string',
       required: true
     },
 
-    description: {
-      type: "string"
-    },
-
-    glyph: {
-      type: "string",
-      required: true,
-      unique: true
-    },
-
-    locations: {
+    dungeonLocations: {
       collection: 'DungeonLocation',
-      via: 'dungeon'
+      via: 'items',
+      dominant: true
     }
   }
 };

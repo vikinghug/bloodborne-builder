@@ -1,5 +1,5 @@
 /**
-* Dungeon.js
+* DungeonLocation.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -7,8 +7,8 @@
 
 module.exports = {
   attributes: {
-    name: {
-      type: "string",
+    level: {
+      type: 'integer',
       required: true
     },
 
@@ -16,15 +16,22 @@ module.exports = {
       type: "string"
     },
 
-    glyph: {
-      type: "string",
-      required: true,
-      unique: true
+    chalice: {
+      model: 'Item'
     },
 
-    locations: {
-      collection: 'DungeonLocation',
-      via: 'dungeon'
+    // rites: {
+    //   collection: 'Item',
+    //   via: 'dungeonLocation'
+    // },
+
+    items: {
+      collection: 'Item',
+      via: 'dungeonLocations'
+    },
+
+    dungeon: {
+      model: 'Dungeon'
     }
   }
 };
