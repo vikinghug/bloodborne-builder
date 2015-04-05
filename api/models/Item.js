@@ -16,6 +16,12 @@ module.exports = {
       collection: 'DungeonLocation',
       via: 'items',
       dominant: true
+    },
+
+    dungeonRites: {
+      collection: 'DungeonLocation',
+      via: 'rites',
+      dominant: true
     }
   }
 };

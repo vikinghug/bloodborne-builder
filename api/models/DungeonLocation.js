@@ -20,10 +20,10 @@ module.exports = {
       model: 'Item'
     },
 
-    // rites: {
-    //   collection: 'Item',
-    //   via: 'dungeonLocation'
-    // },
+    rites: {
+      collection: 'Item',
+      via: 'dungeonRites'
+    },
 
     items: {
       collection: 'Item',
