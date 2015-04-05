@@ -24,9 +24,9 @@ module.exports = {
     postgres: {
       adapter: 'sails-postgresql',
       host: 'localhost',
-      user: 'bloodborne-builder',
-      password: 'bloodborne-builder',
-      database: 'bloodborne-builder-dev'
+      user: 'bloodborne-server',
+      password: 'bloodborne-server',
+      database: 'bloodborne-server-dev'
     }
   }
 };
