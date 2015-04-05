@@ -6,8 +6,16 @@
 */
 
 module.exports = {
-
   attributes: {
+    name: {
+      type: "string",
+      required: true
+    },
+
+    description: {
+      type: "string"
+    },
+
     glyph: {
       type: "string",
       required: true,
@@ -15,4 +23,3 @@ module.exports = {
     }
   }
 };
-
