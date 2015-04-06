@@ -12,6 +12,11 @@ module.exports = {
       required: true
     },
 
+    dungeon: {
+      model: 'Dungeon',
+      required: true
+    },
+
     description: {
       type: "string"
     },
@@ -28,10 +33,6 @@ module.exports = {
     items: {
       collection: 'Item',
       via: 'dungeonLocations'
-    },
-
-    dungeon: {
-      model: 'Dungeon'
     }
   }
 };
