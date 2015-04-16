@@ -23,8 +23,8 @@ module.exports = {
         return [dungeon, dungeonLocations];
       })
       .spread(function(dungeon, dungeonLocations) {
-        // TODO dungeon.locations = dungeonLocations
-        res.send({dungeon: dungeon, locations: dungeonLocations});
+        dungeon.locations = dungeonLocations;
+        res.send(dungeon);
       })
       .catch(function(err) {
         if (err) return res.serverError(err);

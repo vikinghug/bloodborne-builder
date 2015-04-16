@@ -25,6 +25,14 @@ module.exports = {
     locations: {
       collection: 'DungeonLocation',
       via: 'dungeon'
+    },
+
+    toJSON: function() {
+      var dungeon = this.toObject();
+
+      dungeon.locations = this.locations || [];
+
+      return dungeon;
     }
   }
 };
