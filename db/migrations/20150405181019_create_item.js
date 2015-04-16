@@ -1,11 +1,15 @@
 'use strict';
 
 exports.up = function(knex, Promise) {
-  knex.schema.createTable('item', function(table) {
-    table.string('name');
-  })
+  Promise.all([
+    knex.schema.createTable('item', function(table) {
+      table.string('name');
+    })
+  ]);
 };
 
 exports.down = function(knex, Promise) {
-  knex.schema.dropTable('item');
+  Promise.all([
+    knex.schema.dropTable('item')
+  ]);
 };
