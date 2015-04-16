@@ -17,6 +17,6 @@ ne sails-migrations db:create
 # Migrate the database
 ne sails-migrations migrate
 
-# Start the server
+# Start the server (also seeds the database)
 ne sails lift
 ```
