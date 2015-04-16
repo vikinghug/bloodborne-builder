@@ -7,4 +7,29 @@
 
 module.exports = {
 
+  find: function(req, res) {
+    var dungeonID = req.allParams().id;
+
+    Dungeon
+      .findOne(dungeonID)
+      .populate('locations')
+      .then(function(dungeon) {
+        var dungeonLocations = DungeonLocation.find({
+          id: _.pluck(dungeon.locations, 'id')
+        })
+        .populate('items')
+        .then(function(locations) {
+          return locations;
+        });
+
+        return [dungeon, dungeonLocations];
+      })
+      .spread(function(dungeon, dungeonLocations) {
+        // TODO dungeon.locations = dungeonLocations
+        res.send({dungeon: dungeon, locations: dungeonLocations});
+      })
+      .catch(function(err) {
+        if (err) return res.serverError(err);
+      });
+  }
 };
