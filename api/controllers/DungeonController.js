@@ -18,9 +18,7 @@ module.exports = {
           id: _.pluck(dungeon.locations, 'id')
         })
         .populate('items')
-        .then(function(locations) {
-          return locations;
-        });
+        .then(_.identity);
 
         return [dungeon, dungeonLocations];
       })
