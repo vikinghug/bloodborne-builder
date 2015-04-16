@@ -14,5 +14,6 @@ module.exports.routes = {
   'get /auth/:provider/callback': 'AuthController.callback',
   'get /auth/:provider/:action': 'AuthController.callback',
 
-  'get /dungeon/:id': 'DungeonController.find',
+  'get /dungeon': 'DungeonController.find',
+  'get /dungeon/:id': 'DungeonController.findOne',
 };

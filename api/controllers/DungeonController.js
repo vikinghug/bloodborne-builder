@@ -7,7 +7,7 @@
 
 module.exports = {
 
-  find: function(req, res) {
+  findOne: function(req, res) {
     var dungeonID = req.param('id');
 
     Dungeon
