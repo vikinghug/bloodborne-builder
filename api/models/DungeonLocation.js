@@ -33,14 +33,14 @@ module.exports = {
     items: {
       collection: 'Item',
       via: 'dungeonLocations'
+    },
+
+    toJSON: function() {
+      var location = this.toObject();
+
+      location.items = this.items || [];
+
+      return location;
     }
-  },
-
-  toJSON: function() {
-    var location = this.toObject();
-
-    location.items = this.items || [];
-
-    return location;
   }
 };
