@@ -1,33 +1,22 @@
-# bloodborne-builder
+# blood
 
-### Includes
-* Node
-* Express
-* Bower
-  * jQuery
-  * Ember
-  * Handlebars
-* Gulp
-* Browserify
-* Stylus
-* Coffeescript
+A [Sails](http://sailsjs.org) application
 
-### Setup
+## Getting Started
+Note: assumes [ne](https://github.com/rylnd/dotfiles/blob/master/.bash_aliases#L96-L97)
 
-1. Clone this repo
-2. run `npm install`
+```bash
+# Install dependencies
+npm install
 
+# Create the DB user
+createuser -dr bloodborne-server
 
-### Running
+# Create the databases
+ne sails-migrations db:create
+# Migrate the database
+ne sails-migrations migrate
 
-1. For asset generation: `gulp watch`
-2. Run the server: `npm start`
-3. Browse to: `http://localhost:3002`
-
-
-### Deploying
-
-1. Create your heroku instance `heroku create`
-2. Deploy `git push heroku master`
-3. Dance.
-# bloodborne-builder
+# Start the server (also seeds the database)
+ne sails lift
+```

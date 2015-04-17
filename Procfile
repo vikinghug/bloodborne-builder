@@ -1,1 +1,1 @@
-web: coffee scripts/start.coffee
+web: node app.js --prod
