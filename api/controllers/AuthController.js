@@ -138,21 +138,10 @@ var AuthController = {
       }
       req.flash('form', req.body);
 
-      // If an error was thrown, redirect the user to the
-      // login, register or disconnect action initiator view.
-      // These views should take care of rendering the error messages.
-      var action = req.param('action');
-
-      switch (action) {
-        case 'register':
-          res.redirect('/register');
-          break;
-        case 'disconnect':
-          res.redirect('back');
-          break;
-        default:
-          res.redirect('/login');
-      }
+      res.send({
+        success: false,
+        error: err
+      });
     }
 
     passport.callback(req, res, function (err, user, challenges, statuses) {
