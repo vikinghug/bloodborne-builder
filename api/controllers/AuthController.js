@@ -174,7 +174,20 @@ var AuthController = {
    */
   disconnect: function (req, res) {
     passport.disconnect(req, res);
+  },
+
+  validate: function(req, res) {
+    var tokenAuth = sails.services['tokenauth'],
+        token = req.headers.authorization;
+
+    try {
+      tokenAuth.verify(token);
+      res.ok();
+    } catch(err) {
+      res.forbidden();
+    }
   }
+
 };
 
 module.exports = AuthController;
