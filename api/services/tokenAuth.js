@@ -8,6 +8,6 @@ module.exports = {
   },
 
   verify: function(token, callback) {
-    return jwt.verify(payload, popSecret, {}, callback);
+    return jwt.verify(token, popSecret, {}, callback);
   }
 };
